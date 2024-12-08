@@ -9,7 +9,7 @@ import os
 from google.cloud import bigquery
 
 # Configure credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\Raphael\testTransferDataBQ\{your_json}.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\{user}\{path}\{your_json}.json"
 
 # Initialize BigQuery client
 client = bigquery.Client()
