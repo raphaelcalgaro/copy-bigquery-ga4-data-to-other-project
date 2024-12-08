@@ -1,5 +1,1 @@
-# Ignore tous les fichiers JSON
-*.json
-
-# Ou spécifiquement ce fichier
-gainr.json
+"*.json" 
