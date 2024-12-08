@@ -60,12 +60,13 @@ To use the scripts in this repository, ensure the following tools and configurat
 
 ### **2. Service Account Keys**
 
-- Create service account keys for both source and destination projects:
+- Create service a account in the destination project and get a JSON key.
   1. Go to **IAM & Admin > Service Accounts** in the Google Cloud Console.
   2. Assign the necessary roles:
-     - **Source Project**: `BigQuery Data Viewer`, `BigQuery Job User`.
      - **Destination Project**: `BigQuery Data Editor`.
-  3. Download the JSON keys and securely store them outside this repository.
+  3. Create and download the JSON key and securely store them outside your repository.
+  4. Go to the soure project in **IAM & Admin > IAM**, assign the necessary roles:
+     - **Source Project**: `BigQuery Data Viewer`, `BigQuery Job User`.
 
 ### **3. Python Environment**
 
@@ -90,13 +91,17 @@ cd copy-bigquery-ga4-data-to-other-project
 - Open `BigQuery_data_transfer_to_other_GCP_project.py` and update the configuration variables:
 
   ```python
-  # Service account JSON paths
-  SOURCE_SERVICE_ACCOUNT = r"path\to\source-project-key.json"
-  DESTINATION_SERVICE_ACCOUNT = r"path\to\destination-project-key.json"
+  # Configure credentials part
+  os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\{user}\{path}\{your_json}.json"
 
-  # Source and destination project details
-  SOURCE_PROJECT_ID = "your-source-project-id"
-  DESTINATION_PROJECT_ID = "your-destination-project-id"
+  # Source project
+  SOURCE_PROJECT_ID = "{source_project_id}"
+  SOURCE_DATASET_ID = "{source_dataset_id}"
+
+  # Destination project
+  DESTINATION_PROJECT_ID = "{destination_project_id}"
+  DESTINATION_DATASET_ID = "{destiantion_dataset_id}"
+  DESTINATION_DATASET_REGION = "{destination_location_name}"
   ```
 
 ### **3. Run the Script**
