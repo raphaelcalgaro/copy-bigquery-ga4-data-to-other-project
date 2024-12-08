@@ -9,18 +9,18 @@ import os
 from google.cloud import bigquery
 
 # Configurer les credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\Raphael\testTransferDataBQ\gainr-263816-05fb329857a4.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\Raphael\testTransferDataBQ\{your_json}.json"
 
 # Initialiser le client BigQuery
 client = bigquery.Client()
 
 # Projet source
-SOURCE_PROJECT_ID = "bq-test-367602"
-SOURCE_DATASET_ID = "analytics_265176981"
+SOURCE_PROJECT_ID = "{source_project_id}"
+SOURCE_DATASET_ID = "{source_dataset_id}"
 
 # Projet destination
-DESTINATION_PROJECT_ID = "gainr-263816"
-DESTINATION_DATASET_ID = "testDataTransfer3"
+DESTINATION_PROJECT_ID = "{destination_project_id"
+DESTINATION_DATASET_ID = "{destination_dataset_id}"
 
 # Fonction pour vérifier et créer le dataset si nécessaire
 def create_dataset_if_not_exists(project_id, dataset_id, region):
