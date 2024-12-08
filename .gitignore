@@ -1,1 +1,5 @@
 "*.json" 
+
+# Exclude specific files
+transfertPlusieursTablesFonctionne.py
+BigQuery_data_transfer_to_other_project_FR.py
